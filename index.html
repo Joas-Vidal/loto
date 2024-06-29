@@ -11,9 +11,12 @@
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div class="loto_container">
-        <div class="col-md-9">
-            <form class="row g-3">
+    <div class="loto_container d-md-flex">
+        <div class="col-12 col-md-9">
+            <div class="col-12 mb-4 text-uppercase">
+                <h1 class="text-center fs-2 fw-bolder">Grupos</h1>
+            </div>
+            <form class="row g-3 mb-4">
                 <div class="col-md-6">
                   <label for="inputEmail4" class="group_a">Grupo A</label>
                   <div class="input-group">
@@ -95,9 +98,17 @@
                     <p class="count_group" id="count_group_j">Total de números: 0/20</p>
                 </div>
                 <div class="col-12">
-                  <button type="submit" class="btn btn-primary">Sign in</button>
+                  <button type="submit" id="create_groups" onclick="return false" class="btn btn-primary">Desdobrar grupos</button>
                 </div>
             </form>
+            <div class="col-12 mb-4 d-none" id="result_container">
+                <div class="col-12 mb-4 text-uppercase">
+                    <h1 class="text-center fs-2 fw-bolder">Resultado</h1>
+                </div>
+                <div class="row g-3 mt-4" id="result_groups">
+                    <!-- Grupos desdobrados serão inseridos aqui -->
+                </div>
+            </div>
         </div>
     </div>
     <footer>

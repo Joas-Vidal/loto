@@ -186,4 +186,32 @@ $(document).ready(function(){
           }
       }
   });
+
+  // SCRIPT PARA EXIBIÇÃO DE RESULTADO DOS GRUPOS
+
+
+  $('#create_groups').on('click', function(){
+    var letters = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J'];
+    var groups = [];
+    
+    for (var i = 0; i < letters.length; i++) {
+        for (var j = i + 1; j < letters.length; j++) {
+            for (var k = j + 1; k < letters.length; k++) {
+                for (var l = k + 1; l < letters.length; l++) {
+                    for (var m = l + 1; m < letters.length; m++) {
+                        var group = letters[i] + '-' + letters[j] + '-' + letters[k] + '-' + letters[l] + '-' + letters[m];
+                        groups.push(group);
+                    }
+                }
+            }
+        }
+    }
+    console.log(groups);
+    $('#result_groups').empty();
+    groups.forEach(function(group) {
+        $('#result_groups').append('<div class="col col-md-4"><input class="form-control" type="text" value="' + group + '" disabled readonly></div>');
+    });
+
+    $('#result_container').removeClass('d-none');
+  });
 });
